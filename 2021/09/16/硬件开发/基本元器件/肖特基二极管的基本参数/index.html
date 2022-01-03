@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"icebeyond.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="基本参数1.导通压降VF VF为肖特基二极管正向导通时肖特基二极管两端的压降，选择肖特基二极管是尽量选择VF较小的肖特基二极管。2.反向饱和漏电流IR IR指在肖特基二极管两端加入反向电压时，流过肖特基二极管的电流，肖特基二极管反向漏电流较大，选择肖特基二极管是尽量选择IR较小的肖特基二极管。3.额定电流IF 指肖特基二极管长期运行时，根据允许温升折算出来的平均电流值。4.浪涌电流IFSM 允许流">
+<meta property="og:type" content="article">
+<meta property="og:title" content="肖特基二极管">
+<meta property="og:url" content="http://icebeyond.github.io/2021/09/16/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/%E5%9F%BA%E6%9C%AC%E5%85%83%E5%99%A8%E4%BB%B6/%E8%82%96%E7%89%B9%E5%9F%BA%E4%BA%8C%E6%9E%81%E7%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0/index.html">
+<meta property="og:site_name" content="浮沉杂记">
+<meta property="og:description" content="基本参数1.导通压降VF VF为肖特基二极管正向导通时肖特基二极管两端的压降，选择肖特基二极管是尽量选择VF较小的肖特基二极管。2.反向饱和漏电流IR IR指在肖特基二极管两端加入反向电压时，流过肖特基二极管的电流，肖特基二极管反向漏电流较大，选择肖特基二极管是尽量选择IR较小的肖特基二极管。3.额定电流IF 指肖特基二极管长期运行时，根据允许温升折算出来的平均电流值。4.浪涌电流IFSM 允许流">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-85fb3403b69f70ee95547aad62cbf915_720w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-0759187a3b8d796b824171fc67c7ccf4_720w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-709639d01538bec4be07f94b92a0c6fb_720w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-a63d8cb3320852ba7368f276aecbe46f_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-4542968b1e376b45dc23e95402c55852_720w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-7911ac3fa6f3582cf7b8bc63f4515054_720w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-e2a0fccd735cfaa40264677b7014f378_r.jpg">
+<meta property="article:published_time" content="2021-09-16T11:42:28.000Z">
+<meta property="article:modified_time" content="2022-01-03T12:36:37.602Z">
+<meta property="article:author" content="iceBeyond">
+<meta property="article:tag" content="基本元器件">
+<meta property="article:tag" content="Transistor">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-85fb3403b69f70ee95547aad62cbf915_720w.jpg">
+
+<link rel="canonical" href="http://icebeyond.github.io/2021/09/16/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/%E5%9F%BA%E6%9C%AC%E5%85%83%E5%99%A8%E4%BB%B6/%E8%82%96%E7%89%B9%E5%9F%BA%E4%BA%8C%E6%9E%81%E7%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>肖特基二极管 | 浮沉杂记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">浮沉杂记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">< Floating Essay ></p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://icebeyond.github.io/2021/09/16/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/%E5%9F%BA%E6%9C%AC%E5%85%83%E5%99%A8%E4%BB%B6/%E8%82%96%E7%89%B9%E5%9F%BA%E4%BA%8C%E6%9E%81%E7%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/huangjiaju.jpg">
+      <meta itemprop="name" content="iceBeyond">
+      <meta itemprop="description" content="苏世独立 恒而不流">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="浮沉杂记">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          肖特基二极管
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-16 19:42:28" itemprop="dateCreated datePublished" datetime="2021-09-16T19:42:28+08:00">2021-09-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-03 20:36:37" itemprop="dateModified" datetime="2022-01-03T20:36:37+08:00">2022-01-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">硬件开发</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/%E5%9F%BA%E6%9C%AC%E5%85%83%E5%99%A8%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">基本元器件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本参数"><a href="#基本参数" class="headerlink" title="基本参数"></a>基本参数</h1><h2 id="1-导通压降VF"><a href="#1-导通压降VF" class="headerlink" title="1.导通压降VF"></a>1.导通压降VF</h2><ul>
+<li>VF为肖特基二极管正向导通时肖特基二极管两端的压降，选择肖特基二极管是尽量选择VF较小的肖特基二极管。<br><img src="https://pic2.zhimg.com/80/v2-85fb3403b69f70ee95547aad62cbf915_720w.jpg" alt="肖特基二极管额定电流"><h2 id="2-反向饱和漏电流IR"><a href="#2-反向饱和漏电流IR" class="headerlink" title="2.反向饱和漏电流IR"></a>2.反向饱和漏电流IR</h2></li>
+<li>IR指在肖特基二极管两端加入反向电压时，流过肖特基二极管的电流，肖特基二极管反向漏电流较大，选择肖特基二极管是尽量选择IR较小的肖特基二极管。<br><img src="https://pic1.zhimg.com/80/v2-0759187a3b8d796b824171fc67c7ccf4_720w.jpg" alt="肖特基二极管额定电流"><h2 id="3-额定电流IF"><a href="#3-额定电流IF" class="headerlink" title="3.额定电流IF"></a>3.额定电流IF</h2></li>
+<li>指肖特基二极管长期运行时，根据允许温升折算出来的平均电流值。<br><img src="https://pic4.zhimg.com/80/v2-709639d01538bec4be07f94b92a0c6fb_720w.jpg" alt="肖特基二极管反向峰值电压"><h2 id="4-浪涌电流IFSM"><a href="#4-浪涌电流IFSM" class="headerlink" title="4.浪涌电流IFSM"></a>4.浪涌电流IFSM</h2></li>
+<li>允许流过的过junction的正向电流。它不是正常电流，而是瞬间电流，这个值相当大。<br><img src="https://pic4.zhimg.com/80/v2-a63d8cb3320852ba7368f276aecbe46f_720w.jpg" alt="肖特基二极管浪涌电流"><h2 id="5-反向峰值电压VRM"><a href="#5-反向峰值电压VRM" class="headerlink" title="5.反向峰值电压VRM"></a>5.反向峰值电压VRM</h2></li>
+<li>即使没有反向电流，只要不断地提高反向电压，迟早会使肖特基二极管损坏。这种能加上的反向电压，不是瞬时电压，而是反复加上的正反向电压。因给整流器加的是交流电压，它的最大值是规定的重要因子。最大反向峰值电压VRM指为避免击穿所能加的最大反向电压。<br><img src="https://pic3.zhimg.com/80/v2-4542968b1e376b45dc23e95402c55852_720w.jpg" alt="肖特基二极管正向导通电压"><h2 id="6-直流反向电压VR"><a href="#6-直流反向电压VR" class="headerlink" title="6.直流反向电压VR"></a>6.直流反向电压VR</h2></li>
+<li>上述最大反向峰值电压是反复加上的峰值电压，VR是连续加直流电压时的值。用于直流电路，最大直流反向电压对于确定允许值和上限值是很重要的。<br><img src="https://pic1.zhimg.com/80/v2-7911ac3fa6f3582cf7b8bc63f4515054_720w.jpg" alt="肖特基二极管直流反向电压"><h2 id="7-工作频率fM"><a href="#7-工作频率fM" class="headerlink" title="7.工作频率fM"></a>7.工作频率fM</h2></li>
+<li>由于PN结的结电容存在，当工作频率超过某一值时，它的单向导电性将变差。肖特基二极管的fM值较高，最大可达100GHz。<br><img src="https://pic1.zhimg.com/v2-e2a0fccd735cfaa40264677b7014f378_r.jpg" alt="肖特基二极管最大频率"><h2 id="8-反向恢复时间Trr"><a href="#8-反向恢复时间Trr" class="headerlink" title="8.反向恢复时间Trr"></a>8.反向恢复时间Trr</h2></li>
+<li>当工作电压从正向电压变成反向电压时，二极管工作的理想情况是电流能瞬时截止。实际上,一般要延迟一点点时间。决定电流截止延时的量，就是反向恢复时间。虽然它直接影响二_极管的开关速度，但不一定说这个值小就好。也即当肖特基二极管由导通突然反向时，反向电流由很大衰减到接近IR时所需要的时间。大功率开关管工作在高频开关状态时，此项指标至为重要。<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/53144544">&gt;资料来自知乎专栏</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%9F%BA%E6%9C%AC%E5%85%83%E5%99%A8%E4%BB%B6/" rel="tag"># 基本元器件</a>
+              <a href="/tags/Transistor/" rel="tag"># Transistor</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/10/%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91/%E5%9F%BA%E6%9C%AC%E5%85%83%E5%99%A8%E4%BB%B6/%E7%94%B5%E6%84%9F%E5%92%8C%E7%94%B5%E5%AE%B9%E7%9A%84%E7%89%B9%E6%80%A7/" rel="prev" title="电感和电容">
+      <i class="fa fa-chevron-left"></i> 电感和电容
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/18/PCB%E8%AE%BE%E8%AE%A1/Cadence/Capture-CIS%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86%E5%9B%BE/" rel="next" title="Capture-CIS绘制原理图">
+      Capture-CIS绘制原理图 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">基本参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AF%BC%E9%80%9A%E5%8E%8B%E9%99%8DVF"><span class="nav-number">1.1.</span> <span class="nav-text">1.导通压降VF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%8F%8D%E5%90%91%E9%A5%B1%E5%92%8C%E6%BC%8F%E7%94%B5%E6%B5%81IR"><span class="nav-number">1.2.</span> <span class="nav-text">2.反向饱和漏电流IR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%A2%9D%E5%AE%9A%E7%94%B5%E6%B5%81IF"><span class="nav-number">1.3.</span> <span class="nav-text">3.额定电流IF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B5%AA%E6%B6%8C%E7%94%B5%E6%B5%81IFSM"><span class="nav-number">1.4.</span> <span class="nav-text">4.浪涌电流IFSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%8F%8D%E5%90%91%E5%B3%B0%E5%80%BC%E7%94%B5%E5%8E%8BVRM"><span class="nav-number">1.5.</span> <span class="nav-text">5.反向峰值电压VRM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E7%9B%B4%E6%B5%81%E5%8F%8D%E5%90%91%E7%94%B5%E5%8E%8BVR"><span class="nav-number">1.6.</span> <span class="nav-text">6.直流反向电压VR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%B7%A5%E4%BD%9C%E9%A2%91%E7%8E%87fM"><span class="nav-number">1.7.</span> <span class="nav-text">7.工作频率fM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E5%8F%8D%E5%90%91%E6%81%A2%E5%A4%8D%E6%97%B6%E9%97%B4Trr"><span class="nav-number">1.8.</span> <span class="nav-text">8.反向恢复时间Trr</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="iceBeyond"
+      src="/images/huangjiaju.jpg">
+  <p class="site-author-name" itemprop="name">iceBeyond</p>
+  <div class="site-description" itemprop="description">苏世独立 恒而不流</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/icebeyond" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;icebeyond" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:iceeebeyond@gmail.com" title="E-Mail → mailto:iceeebeyond@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/" title="YouTube → https:&#x2F;&#x2F;youtube.com" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">iceBeyond</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
