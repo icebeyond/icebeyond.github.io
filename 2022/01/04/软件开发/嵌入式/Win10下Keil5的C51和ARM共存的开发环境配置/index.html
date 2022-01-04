@@ -20,20 +20,67 @@
     var CONFIG = {"hostname":"icebeyond.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="概述1.安装 C512.安装 MDK3.C51 和 MDK 共存4.注册5.安装 STM32 PACK">
+  <meta name="description" content="概述在学完51单片机就要学习32单片机了，由于二者架构不同，所以在开发环境上有所不同，如果既要写51的程序，又要写32的程序的话，就要在C51和mdk中来回切换编译器很难受，所以今天就教大家在WIN10系统下安装最新版本的C51和MDK，并且配置二者共存的开发环境。详细步骤如下1.安装 C51 点击下载最新Keil软件包 提取码：nmc7 下载完成后，文件夹如下，首先进行c51的安装，双击C51">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Win10下Keil5的C51和ARM共存的开发环境配置">
 <meta property="og:url" content="http://icebeyond.github.io/2022/01/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E5%B5%8C%E5%85%A5%E5%BC%8F/Win10%E4%B8%8BKeil5%E7%9A%84C51%E5%92%8CARM%E5%85%B1%E5%AD%98%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="浮沉杂记">
-<meta property="og:description" content="概述1.安装 C512.安装 MDK3.C51 和 MDK 共存4.注册5.安装 STM32 PACK">
+<meta property="og:description" content="概述在学完51单片机就要学习32单片机了，由于二者架构不同，所以在开发环境上有所不同，如果既要写51的程序，又要写32的程序的话，就要在C51和mdk中来回切换编译器很难受，所以今天就教大家在WIN10系统下安装最新版本的C51和MDK，并且配置二者共存的开发环境。详细步骤如下1.安装 C51 点击下载最新Keil软件包 提取码：nmc7 下载完成后，文件夹如下，首先进行c51的安装，双击C51">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053159.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053558.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053618.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053632.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053647.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053700.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053742.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053758.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053814.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051250.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051312.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051402.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051515.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051446.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051542.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053758.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051603.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051725.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051735.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051751.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051805.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051832.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051858.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051906.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051929.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052002.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052024.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052131.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052317.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052406.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052422.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052515.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052537.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052603.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052623.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052644.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052701.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052806.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052835.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052930.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053043.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052740.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052225.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053112.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053141.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053220.png">
 <meta property="article:published_time" content="2022-01-03T19:47:50.000Z">
-<meta property="article:modified_time" content="2022-01-03T20:50:39.637Z">
+<meta property="article:modified_time" content="2022-01-04T02:53:45.178Z">
 <meta property="article:author" content="iceBeyond">
 <meta property="article:tag" content="Keil">
 <meta property="article:tag" content="C51">
 <meta property="article:tag" content="MDK - 开发环境">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053159.png">
 
 <link rel="canonical" href="http://icebeyond.github.io/2022/01/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/%E5%B5%8C%E5%85%A5%E5%BC%8F/Win10%E4%B8%8BKeil5%E7%9A%84C51%E5%92%8CARM%E5%85%B1%E5%AD%98%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
 
@@ -187,7 +234,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-04 03:47:50 / 修改时间：04:50:39" itemprop="dateCreated datePublished" datetime="2022-01-04T03:47:50+08:00">2022-01-04</time>
+              <time title="创建时间：2022-01-04 03:47:50 / 修改时间：10:53:45" itemprop="dateCreated datePublished" datetime="2022-01-04T03:47:50+08:00">2022-01-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -214,7 +261,67 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="1-安装-C51"><a href="#1-安装-C51" class="headerlink" title="1.安装 C51"></a>1.安装 C51</h2><h2 id="2-安装-MDK"><a href="#2-安装-MDK" class="headerlink" title="2.安装 MDK"></a>2.安装 MDK</h2><h2 id="3-C51-和-MDK-共存"><a href="#3-C51-和-MDK-共存" class="headerlink" title="3.C51 和 MDK 共存"></a>3.C51 和 MDK 共存</h2><h2 id="4-注册"><a href="#4-注册" class="headerlink" title="4.注册"></a>4.注册</h2><h2 id="5-安装-STM32-PACK"><a href="#5-安装-STM32-PACK" class="headerlink" title="5.安装 STM32 PACK"></a>5.安装 STM32 PACK</h2>
+        <p><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053159.png"></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h4 id="在学完51单片机就要学习32单片机了，由于二者架构不同，所以在开发环境上有所不同，如果既要写51的程序，又要写32的程序的话，就要在C51和mdk中来回切换编译器很难受，所以今天就教大家在WIN10系统下安装最新版本的C51和MDK，并且配置二者共存的开发环境。详细步骤如下"><a href="#在学完51单片机就要学习32单片机了，由于二者架构不同，所以在开发环境上有所不同，如果既要写51的程序，又要写32的程序的话，就要在C51和mdk中来回切换编译器很难受，所以今天就教大家在WIN10系统下安装最新版本的C51和MDK，并且配置二者共存的开发环境。详细步骤如下" class="headerlink" title="在学完51单片机就要学习32单片机了，由于二者架构不同，所以在开发环境上有所不同，如果既要写51的程序，又要写32的程序的话，就要在C51和mdk中来回切换编译器很难受，所以今天就教大家在WIN10系统下安装最新版本的C51和MDK，并且配置二者共存的开发环境。详细步骤如下"></a>在学完51单片机就要学习32单片机了，由于二者架构不同，所以在开发环境上有所不同，如果既要写51的程序，又要写32的程序的话，就要在C51和mdk中来回切换编译器很难受，所以今天就教大家在WIN10系统下安装最新版本的C51和MDK，并且配置二者共存的开发环境。详细步骤如下</h4><h2 id="1-安装-C51"><a href="#1-安装-C51" class="headerlink" title="1.安装 C51"></a>1.安装 C51</h2><ul>
+<li>点击下载<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1r4iLSgfPlN9nvmamTFPeKA">最新Keil软件包</a> 提取码：nmc7</li>
+<li>下载完成后，文件夹如下，首先进行c51的安装，双击C51V954.exe ，运行<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053558.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053618.png"></li>
+<li>点击next，进入下一步<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053632.png"></li>
+<li>勾选agree，并点击next<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053647.png"></li>
+<li>选择安装路径（可以自定义安装路径）并点击next，进入下一步安装<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053700.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053742.png"></li>
+<li>全部填 “1”，点击 next<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053758.png"></li>
+<li>耐心等待安装完成<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053814.png"></li>
+<li>安装完成后取消所有勾选，点击 finish 完成 C51 的安装。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051250.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051312.png"><br>此时我们C51已经安装完成了，先不用打开和破解，下面开始MDK的安装。</li>
+</ul>
+<h2 id="2-安装-MDK"><a href="#2-安装-MDK" class="headerlink" title="2.安装 MDK"></a>2.安装 MDK</h2><ul>
+<li>双击MDK536.exe运行</li>
+<li>点击next，进入下一步<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051402.png"></li>
+<li>勾选 同意，点击Next<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051515.png"></li>
+<li>点击Core这一行的browse…,进行安装位置选择，不要和C51安装在同一文件夹。pack会自动根据core的文件夹路径自行修改，不用选择。然后点击Next。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051446.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051542.png"></li>
+<li>这里也是随便都写 1 ，然后next<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053758.png"></li>
+<li>等待安装<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051603.png"></li>
+<li>快结束的时候可能会弹出安装驱动的界面，选择是就可以安装了，安装完成后如下。取消打钩，点击完成退出安装。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051725.png"></li>
+</ul>
+<h2 id="3-C51-和-MDK-共存"><a href="#3-C51-和-MDK-共存" class="headerlink" title="3.C51 和 MDK 共存"></a>3.C51 和 MDK 共存</h2><ul>
+<li>下面开始共存的操作，首先打开C51的安装目录和MDK的安装目录，把C51目录下的C51文件夹整个复制到MDK目录下。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051735.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051751.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051805.png"></li>
+<li>复制完成后，打开C51目录下的UV4，Ctrl+A选中全部文件，然后Ctrl+C复制，打开MDK目录下的UV4，Ctrl+V粘贴<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051832.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051858.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051906.png"></li>
+<li>这时候会提示同名文件是否覆盖，选择替换或者跳过这些文件。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104051929.png"></li>
+<li>然后打开C51目录下的TOOLS.INI，Ctrl+A选中全部文件，然后Ctrl+C复制，打开MDK目录下的TOOLS.INI，在到最后一行Ctrl+V粘贴。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052002.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052024.png"></li>
+<li>最后把c51复制过来的部分的PATH改成当前MDK的目录。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052131.png"></li>
+<li>最终结果如上面的图，同处于我安装时候选的MDK的目录keil5下，ARM的路径最后是\ARM，C51的路径是\C51。</li>
+</ul>
+<h2 id="4-注册"><a href="#4-注册" class="headerlink" title="4.注册"></a>4.注册</h2><ul>
+<li><p>首先确认防火墙和病毒威胁防护已经关闭<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052317.png"></p>
+</li>
+<li><p>以管理员身份打开下载好的破解软件。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052406.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052422.png"></p>
+</li>
+<li><p>以管理员身份打开运行MDK目录下的UV4文件夹中的UV4.exe,点击左上角的file，选择下拉菜单中的，License Management<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052515.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052537.png"></p>
+</li>
+<li><p>复制CID，粘贴到破解软件的CID中，Target选C51，点击Generate，复制生成的license，粘贴到License Management，点击 Add LIC，Support Period 显示到2032年，C51就破解完成了<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052603.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052623.png"></p>
+</li>
+<li><p>复制CID，粘贴到破解软件的CID中，Target选ARM，点击Generate，复制生成的license，粘贴到License Management，点击 Add LIC，Support Period 显示到2032年，ARM就破解完成了<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052644.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052701.png"></p>
+</li>
+</ul>
+<h2 id="5-安装-STM32-PACK"><a href="#5-安装-STM32-PACK" class="headerlink" title="5.安装 STM32 PACK"></a>5.安装 STM32 PACK</h2><ul>
+<li><p>第一次打开软件，应该会自动弹出下图界面，如果没有，点击菜单栏魔术棒旁边的三个骰子图标（Pack Installer）。出现下图界面，点击File<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052806.png"></p>
+</li>
+<li><p>在点击Import…选择下载好的几个stm32的pack，然后就会自动安装了。安装完成后关闭Pack Installer界面即可。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052835.png"></p>
+</li>
+<li><p>到下载的软件包里面找到 PACK 文件夹，选择 PACK 文件，点击 打开，等待安装成功<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052930.png"><br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053043.png"></p>
+</li>
+<li><p>可以编译一个 STM32F1 测试工程试一试<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052740.png"></p>
+</li>
+<li><p>现在已经完成所有工作啦~~，这时候我们可以去C51的安装目录把所有文件删除。</p>
+</li>
+<li><p>在MDK目录下找到UV4.exe，右键，发送快捷方式到桌面。<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104052225.png"></p>
+</li>
+</ul>
+<h2 id="6-更改配色"><a href="#6-更改配色" class="headerlink" title="6.更改配色"></a>6.更改配色</h2><ul>
+<li>复制 global.prop文件<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053112.png"></li>
+<li>找到keil的安装路径，粘贴到该路径下<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053141.png"></li>
+<li>重启keil，切换成功 ！<br><img src="https://cdn.jsdelivr.net/gh/icebeyond/ImageHub//img20220104053220.png"></li>
+</ul>
+<p>Bilibili视频教程请点击<a href="">Win10下Keil5的C51和ARM共存的开发环境配置</a></p>
+
     </div>
 
     
@@ -296,7 +403,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85-C51"><span class="nav-number">2.</span> <span class="nav-text">1.安装 C51</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85-MDK"><span class="nav-number">3.</span> <span class="nav-text">2.安装 MDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-C51-%E5%92%8C-MDK-%E5%85%B1%E5%AD%98"><span class="nav-number">4.</span> <span class="nav-text">3.C51 和 MDK 共存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B3%A8%E5%86%8C"><span class="nav-number">5.</span> <span class="nav-text">4.注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%AE%89%E8%A3%85-STM32-PACK"><span class="nav-number">6.</span> <span class="nav-text">5.安装 STM32 PACK</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E5%AD%A6%E5%AE%8C51%E5%8D%95%E7%89%87%E6%9C%BA%E5%B0%B1%E8%A6%81%E5%AD%A6%E4%B9%A032%E5%8D%95%E7%89%87%E6%9C%BA%E4%BA%86%EF%BC%8C%E7%94%B1%E4%BA%8E%E4%BA%8C%E8%80%85%E6%9E%B6%E6%9E%84%E4%B8%8D%E5%90%8C%EF%BC%8C%E6%89%80%E4%BB%A5%E5%9C%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B8%8A%E6%9C%89%E6%89%80%E4%B8%8D%E5%90%8C%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%97%A2%E8%A6%81%E5%86%9951%E7%9A%84%E7%A8%8B%E5%BA%8F%EF%BC%8C%E5%8F%88%E8%A6%81%E5%86%9932%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%AF%9D%EF%BC%8C%E5%B0%B1%E8%A6%81%E5%9C%A8C51%E5%92%8Cmdk%E4%B8%AD%E6%9D%A5%E5%9B%9E%E5%88%87%E6%8D%A2%E7%BC%96%E8%AF%91%E5%99%A8%E5%BE%88%E9%9A%BE%E5%8F%97%EF%BC%8C%E6%89%80%E4%BB%A5%E4%BB%8A%E5%A4%A9%E5%B0%B1%E6%95%99%E5%A4%A7%E5%AE%B6%E5%9C%A8WIN10%E7%B3%BB%E7%BB%9F%E4%B8%8B%E5%AE%89%E8%A3%85%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E7%9A%84C51%E5%92%8CMDK%EF%BC%8C%E5%B9%B6%E4%B8%94%E9%85%8D%E7%BD%AE%E4%BA%8C%E8%80%85%E5%85%B1%E5%AD%98%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E3%80%82%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%E5%A6%82%E4%B8%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">在学完51单片机就要学习32单片机了，由于二者架构不同，所以在开发环境上有所不同，如果既要写51的程序，又要写32的程序的话，就要在C51和mdk中来回切换编译器很难受，所以今天就教大家在WIN10系统下安装最新版本的C51和MDK，并且配置二者共存的开发环境。详细步骤如下</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85-C51"><span class="nav-number">2.</span> <span class="nav-text">1.安装 C51</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85-MDK"><span class="nav-number">3.</span> <span class="nav-text">2.安装 MDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-C51-%E5%92%8C-MDK-%E5%85%B1%E5%AD%98"><span class="nav-number">4.</span> <span class="nav-text">3.C51 和 MDK 共存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B3%A8%E5%86%8C"><span class="nav-number">5.</span> <span class="nav-text">4.注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%AE%89%E8%A3%85-STM32-PACK"><span class="nav-number">6.</span> <span class="nav-text">5.安装 STM32 PACK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%9B%B4%E6%94%B9%E9%85%8D%E8%89%B2"><span class="nav-number">7.</span> <span class="nav-text">6.更改配色</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
